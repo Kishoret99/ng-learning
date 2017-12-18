@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRouterModule } from './app-router.module';
-import { HomeComponent } from './home/home.component';
+import { BreakOutComponent } from './break-out/break-out.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    BreakOutComponent
   ],
   imports: [
     BrowserModule,
@@ -18,3 +18,5 @@ import { HomeComponent } from './home/home.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
