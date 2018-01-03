@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { element } from 'protractor';
+// import { SeoService } from '../seo/seo.service';
+import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
+import * as a from './abc.json';
+
 
 @Component({
   selector: 'app-break-out',
@@ -48,7 +52,17 @@ export class BreakOutComponent implements OnInit {
     // Lives
     private lives = 3;
 
-    constructor() {}
+    private _seo;
+
+    constructor(private firebaseDb: AngularFireDatabase) {
+
+    }
+
+    public getSeoData() {
+        // getSeoData(pageName: string, type = 'flat')
+        this.firebaseDb.list('/static').valueChanges().subscribe(console.log);
+        // console.log(data)
+    }
 
     ngOnInit() {
         this.canvas = document.getElementById('screen');
@@ -59,7 +73,8 @@ export class BreakOutComponent implements OnInit {
         document.addEventListener('keydown', this.keyDownHandler.bind(this), false);
         document.addEventListener('keyup', this.keyUpHandler.bind(this), false);
         document.addEventListener('mousemove', this.mouseMoveHandler.bind(this), false );
-        setInterval(() => this.draw(), 10);
+        // setInterval(() => this.draw(), 10);
+        this.getSeoData();
     }
 
     setDefaultBallPosition() {
