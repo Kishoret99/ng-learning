@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { element } from 'protractor';
 // import { SeoService } from '../seo/seo.service';
 import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
-import * as a from './abc.json';
 
 
 @Component({

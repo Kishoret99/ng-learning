@@ -8,13 +8,16 @@ import { GoogleRenderComponent } from './google-render/google-render.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
 import { firebaseConfig } from '../environments/environment';
-import { SeoService } from './seo/seo.service';
+import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BreakOutComponent,
-    GoogleRenderComponent
+    GoogleRenderComponent,
+    HomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,7 @@ import { SeoService } from './seo/seo.service';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
   ],
-  providers: [AngularFireDatabase, SeoService],
+  providers: [AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
